@@ -1,3 +1,9 @@
-1.网络请求请参考loginActivity的网络请求 
-2.命名规范：
-3.
+1.网络请求：请参考loginActivity的网络请求 new StringRequest 用ApplicationController的add方法添加request
+    正在考虑要不要用代理封装来请求
+2.命名规范：fragment_xx item_大类_小类 item_navigation_options
+3.toast在UIUtil类里面
+4.json和javabean的互转使用jsonUtils类 采用的是jackson性能爆表了
+5.不再使用listview 改为recycleView 性能更好 cradView也已经include进来了
+6.下拉刷新使用swiperefreshlayout，但是官方不支持上拉加载更多，这个功能我正在写
+7.slidingTab是使用的谷歌5.0推荐的那个玩意，但是不知道为啥在4.4上面不显示那个黄条，这个bug正在修复中
+8.每个activity都会使用toolbar 除了mainActivity其他的都还没有加toolBar，这个呢。。。我加上了会commit的，很快的
