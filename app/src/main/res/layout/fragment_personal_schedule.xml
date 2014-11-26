@@ -1,28 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/swipe_container_schedule"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <com.mredrock.cyxbs.ui.widget.slidingTabs.SlidingTabLayout
+        android:id="@+id/sliding_tabs_schedule"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#FFF"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:background="@color/theme_default_primary" />
 
-        <com.mredrock.cyxbs.ui.widget.slidingTabs.SlidingTabLayout
-            android:id="@+id/sliding_tabs_schedule"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/theme_default_primary" />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager_schedule"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1"
+        android:background="@android:color/white" />
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/viewpager_schedule"
-            android:layout_width="match_parent"
-            android:layout_height="0px"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:background="@android:color/white" />
-
-    </LinearLayout>
-</android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>

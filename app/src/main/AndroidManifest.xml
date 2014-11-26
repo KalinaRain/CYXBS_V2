@@ -7,11 +7,11 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".io.request.ApplicationController"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-        android:name=".io.ApplicationController">
+        android:theme="@style/AppTheme" >
         <activity
             android:name="com.mredrock.cyxbs.ui.activity.LaunchActivity"
             android:theme="@style/LaunchTheme" >
@@ -48,7 +48,7 @@
         </activity>
         <activity
             android:name="com.mredrock.cyxbs.ui.activity.PortalActivity"
-            android:label="@string/title_activity_portal">
+            android:label="@string/title_activity_portal" >
         </activity>
         <activity
             android:name="com.mredrock.cyxbs.ui.activity.BoardActivity"
@@ -67,18 +67,21 @@
             android:label="@string/title_activity_what_to_eat" >
         </activity>
         <activity
-            android:name="com.mredrock.cyxbs.ui.activity.CommunityActivity"
-            android:label="@string/title_activity_community" >
+            android:name=".ui.activity.BBSActivity"
+            android:label="@string/title_activity_bbs" >
         </activity>
         <activity
             android:name="com.mredrock.cyxbs.ui.activity.ClassTalkActivity"
-            android:label="@string/title_activity_class_talk">
+            android:label="@string/title_activity_class_talk" >
         </activity>
         <activity
             android:name="com.mredrock.cyxbs.ui.activity.SecretActivity"
-            android:label="@string/title_activity_secret">
+            android:label="@string/title_activity_secret" >
         </activity>
-
+        <activity
+            android:name="com.mredrock.cyxbs.ui.activity.NewsContentActivity"
+            android:label="@string/title_activity_news_content" >
+        </activity>
     </application>
 
 </manifest>

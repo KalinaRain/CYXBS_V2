@@ -14,10 +14,9 @@ import com.mredrock.cyxbs.R;
 import com.mredrock.cyxbs.ui.widget.slidingTabs.SlidingTabLayout;
 import com.mredrock.cyxbs.util.LogUtils;
 
-public class PersonalCourseFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener{
+public class PersonalCourseFragment extends Fragment{
     private static final String TAG = LogUtils.makeLogTag(PersonalCourseFragment.class);
 
-    private SwipeRefreshLayout mSwipeLayout;
     private SlidingTabLayout mSlidingTabLayout;
 
     private ViewPager mViewPager;
@@ -26,17 +25,7 @@ public class PersonalCourseFragment extends Fragment implements SwipeRefreshLayo
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_personal_schedule, container, false);
-        initView(view);
         return view;
-    }
-    private void initView(View view){
-        mSwipeLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_container_schedule);
-        mSwipeLayout.setOnRefreshListener(this);
-        mSwipeLayout.setColorSchemeResources(
-                R.color.theme_default_primary,
-                android.R.color.holo_blue_bright,
-                android.R.color.holo_purple,
-                android.R.color.holo_red_light);
     }
 
     // BEGIN_INCLUDE (fragment_onviewcreated)
@@ -56,15 +45,6 @@ public class PersonalCourseFragment extends Fragment implements SwipeRefreshLayo
         // END_INCLUDE (setup_slidingtablayout)
     }
 
-    @Override
-    public void onRefresh() {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mSwipeLayout.setRefreshing(false);
-            }
-        }, 5000);
-    }
     // END_INCLUDE (fragment_onviewcreated)
 
     class SchedulePagerAdapter extends PagerAdapter {

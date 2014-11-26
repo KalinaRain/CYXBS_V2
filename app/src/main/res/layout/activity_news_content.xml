@@ -4,7 +4,7 @@
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_board"
+        android:id="@+id/toolbar_news_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/theme_default_primary"

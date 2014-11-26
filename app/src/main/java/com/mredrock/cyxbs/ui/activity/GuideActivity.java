@@ -11,9 +11,10 @@ import android.widget.Button;
 
 import com.mredrock.cyxbs.Config;
 import com.mredrock.cyxbs.R;
+import com.mredrock.cyxbs.ui.impl.AppBarImpl;
 import com.mredrock.cyxbs.util.SpUtils;
 
-public class GuideActivity extends Activity {
+public class GuideActivity extends BaseActivity{
 
     private Button btnGoto;
     private SharedPreferences sp;
@@ -39,6 +40,5 @@ public class GuideActivity extends Activity {
             }
         });
     }
-
 
 }

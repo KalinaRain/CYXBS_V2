@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v7.widget.ListPopupWindow;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,10 +23,11 @@ import android.widget.TextView;
 
 import com.mredrock.cyxbs.Config;
 import com.mredrock.cyxbs.R;
-import com.mredrock.cyxbs.io.ApplicationController;
-import com.mredrock.cyxbs.io.StringRequest;
+import com.mredrock.cyxbs.io.request.ApplicationController;
+import com.mredrock.cyxbs.io.request.StringRequest;
 import com.mredrock.cyxbs.model.Account;
 import com.mredrock.cyxbs.model.AccountCache;
+import com.mredrock.cyxbs.ui.widget.swipebacklayout.app.SwipeBackActivity;
 import com.mredrock.cyxbs.util.JsonUtils;
 import com.mredrock.cyxbs.util.LogUtils;
 import com.mredrock.cyxbs.util.SpUtils;
@@ -35,7 +35,6 @@ import com.mredrock.cyxbs.util.UIUtils;
 
 import net.smalinuxer.spillover.frameDesign.Request;
 
-import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -47,7 +46,7 @@ import static com.mredrock.cyxbs.util.LogUtils.LOGI;
 /**
  * A login screen that offers login via stu_num/password.
  */
-public class LoginActivity extends BaseActivity implements OnClickListener,AdapterView.OnItemClickListener,TextView.OnEditorActionListener {
+public class LoginActivity extends SwipeBackActivity implements OnClickListener,AdapterView.OnItemClickListener,TextView.OnEditorActionListener {
 
     private final static String TAG = LogUtils.makeLogTag(LoginActivity.class);
 
@@ -193,7 +192,9 @@ public class LoginActivity extends BaseActivity implements OnClickListener,Adapt
                 @Override
                 public void callErrorBack(byte[] responseContent, String callBackdata) {
 //                    LOGE(TAG,callBackdata);
-                    login(callBackdata);
+                    if(callBackdata!=null){
+                        login(callBackdata);
+                    }
                     UIUtils.Toast(LoginActivity.this, getString(R.string.net_error));
                 }
             }, params));

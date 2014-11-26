@@ -11,7 +11,7 @@ import com.mredrock.cyxbs.R;
 import com.mredrock.cyxbs.ui.activity.AroundActivity;
 import com.mredrock.cyxbs.ui.activity.BoardActivity;
 import com.mredrock.cyxbs.ui.activity.ClassTalkActivity;
-import com.mredrock.cyxbs.ui.activity.CommunityActivity;
+import com.mredrock.cyxbs.ui.activity.BBSActivity;
 import com.mredrock.cyxbs.ui.activity.MapActivity;
 import com.mredrock.cyxbs.ui.activity.PortalActivity;
 import com.mredrock.cyxbs.ui.activity.SecretActivity;
@@ -66,7 +66,7 @@ public class MyExploreFragment extends Fragment implements OnClickListener{
                 startActivity(new Intent(getActivity(), WhatToEatActivity.class));
                 break;
             case R.id.tv_community:
-                startActivity(new Intent(getActivity(), CommunityActivity.class));
+                startActivity(new Intent(getActivity(), BBSActivity.class));
                 break;
             case R.id.tv_class_talk:
                 startActivity(new Intent(getActivity(), ClassTalkActivity.class));

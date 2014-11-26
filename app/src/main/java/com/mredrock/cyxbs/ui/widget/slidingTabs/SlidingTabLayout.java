@@ -148,8 +148,8 @@ public class SlidingTabLayout extends HorizontalScrollView {
     protected TextView createDefaultTabView(Context context) {
         TextView textView = new TextView(context);
         textView.setGravity(Gravity.CENTER);
-        int width = UIUtils.getScreenWidth(getContext())/3;
-        textView.setWidth(width);
+        /*int width = UIUtils.getScreenWidth(getContext())/3;
+        textView.setWidth(width);*/
         textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, TAB_VIEW_TEXT_SIZE_SP);
         textView.setTypeface(Typeface.DEFAULT_BOLD);
         textView.setTextAppearance(context, R.style.SlidingTextViewStyle);
@@ -169,7 +169,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
         }
 
         int padding = (int) (TAB_VIEW_PADDING_DIPS * getResources().getDisplayMetrics().density);
-        textView.setPadding(padding, padding, padding, padding);
+        textView.setPadding(padding*2, padding, padding*2, padding);
 
         return textView;
     }
