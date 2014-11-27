@@ -37,7 +37,8 @@ public class BaseToolBarActivity extends BaseActivity implements AppBarImpl {
         contentView = inflater.inflate(resId, null);
         if (baseLayout != null){
             if(contentView!=null){
-                baseLayout.addView(contentView);
+                ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
+                baseLayout.addView(contentView,layoutParams);
             }
             // 添加Activity到堆栈
 //            AppManager.getAppManager().addActivity(this);

@@ -185,7 +185,6 @@ public class LoginActivity extends SwipeBackActivity implements OnClickListener,
             ApplicationController.add2RequestQueue(new StringRequest(Config.API_VERIFY, new Request.ResponseListener<String>() {
                 @Override
                 public void callBack(Object responseData) {
-                    LOGI(TAG,responseData.toString());
                     login(responseData.toString());
                 }
 
