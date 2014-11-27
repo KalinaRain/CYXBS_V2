@@ -5,4 +5,6 @@ package com.mredrock.cyxbs.ui.impl;
  */
 public interface AppBarImpl {
     public void configureToolbar();
+    public void configureToolbar(int title);
+
 }

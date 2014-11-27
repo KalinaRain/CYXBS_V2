@@ -6,10 +6,11 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 
 import com.mredrock.cyxbs.ui.activity.BaseActivity;
+import com.mredrock.cyxbs.ui.activity.BaseToolBarActivity;
 import com.mredrock.cyxbs.ui.widget.swipebacklayout.SwipeBackLayout;
 import com.mredrock.cyxbs.ui.widget.swipebacklayout.Utils;
 
-public class SwipeBackActivity extends BaseActivity implements SwipeBackActivityBase {
+public class SwipeBackActivity extends BaseToolBarActivity implements SwipeBackActivityBase {
     private SwipeBackActivityHelper mHelper;
 
     @Override

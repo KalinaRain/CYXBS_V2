@@ -10,21 +10,12 @@ import com.mredrock.cyxbs.R;
 import com.mredrock.cyxbs.ui.impl.AppBarImpl;
 import com.mredrock.cyxbs.ui.widget.swipebacklayout.app.SwipeBackActivity;
 
-public class SecretActivity extends SwipeBackActivity implements AppBarImpl{
+public class SecretActivity extends SwipeBackActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_secret);
-        configureToolbar();
+        setContentLayout(R.layout.activity_secret,R.string.title_activity_secret);
     }
 
-
-    @Override
-    public void configureToolbar() {
-        Toolbar aboutUsToolbar = (Toolbar) findViewById(R.id.toolbar_secret);
-        setSupportActionBar(aboutUsToolbar);
-        getSupportActionBar().setTitle(R.string.title_activity_secret);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
 }

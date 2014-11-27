@@ -27,11 +27,12 @@ import com.mredrock.cyxbs.ui.fragment.MyExploreFragment;
 import com.mredrock.cyxbs.ui.fragment.PersonalCourseFragment;
 import com.mredrock.cyxbs.ui.fragment.SchoolNewsFragment;
 import com.mredrock.cyxbs.ui.impl.AppBarImpl;
+import com.mredrock.cyxbs.ui.widget.swipebacklayout.app.SwipeBackActivity;
 import com.mredrock.cyxbs.util.LogUtils;
 
 import static com.mredrock.cyxbs.util.LogUtils.LOGD;
 
-public class MainActivity extends BaseActivity implements AppBarImpl {
+public class MainActivity extends BaseActivity implements AppBarImpl{
     private static final String TAG = LogUtils.makeLogTag(MainActivity.class);
 
     // Navigation drawer:
@@ -78,12 +79,10 @@ public class MainActivity extends BaseActivity implements AppBarImpl {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         configureToolbar();
         configureDrawer();
     }
 
-    @Override
     public void configureToolbar() {
         Toolbar mainToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mainToolbar);
@@ -99,6 +98,12 @@ public class MainActivity extends BaseActivity implements AppBarImpl {
             }
         });
     }
+
+    @Override
+    public void configureToolbar(int title) {
+
+    }
+
     private void configureDrawer() {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 

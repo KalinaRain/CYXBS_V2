@@ -42,5 +42,7 @@
     <string name="net_error">没有网络哦~</string>
     <string name="edu_no_info">教务在线没有你的资料哦</string>
     <string name="title_activity_news_content">新闻详情</string>
+    <string name="title_activity_base_tool_bar">BaseToolBarActivity</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

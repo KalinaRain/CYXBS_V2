@@ -11,23 +11,15 @@ import com.mredrock.cyxbs.util.LogUtils;
 
 import static com.mredrock.cyxbs.util.LogUtils.LOGD;
 
-public class AboutUsActivity extends SwipeBackActivity implements AppBarImpl {
+public class AboutUsActivity extends SwipeBackActivity {
 
     private static final String TAG = LogUtils.makeLogTag(AboutUsActivity.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about_us);
-        configureToolbar();
+        setContentLayout(R.layout.activity_about_us,R.string.title_activity_about_us);
     }
 
-    @Override
-    public void configureToolbar() {
-        Toolbar aboutUsToolbar = (Toolbar) findViewById(R.id.toolbar_about_us);
-        setSupportActionBar(aboutUsToolbar);
-        getSupportActionBar().setTitle(R.string.title_activity_about_us);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
 
 }
