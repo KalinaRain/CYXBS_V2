@@ -27,7 +27,6 @@ import com.mredrock.cyxbs.ui.fragment.MyExploreFragment;
 import com.mredrock.cyxbs.ui.fragment.PersonalCourseFragment;
 import com.mredrock.cyxbs.ui.fragment.SchoolNewsFragment;
 import com.mredrock.cyxbs.ui.impl.AppBarImpl;
-import com.mredrock.cyxbs.ui.widget.swipebacklayout.app.SwipeBackActivity;
 import com.mredrock.cyxbs.util.LogUtils;
 
 import static com.mredrock.cyxbs.util.LogUtils.LOGD;
@@ -269,7 +268,6 @@ public class MainActivity extends BaseActivity implements AppBarImpl{
                     break;
                 case NAVDRAWER_ITEM_EXIT:
                     this.getActivity().finish();
-//                    this.getActivity().overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
                     break;
                 default:
                     break;

@@ -21,7 +21,11 @@ public class AppManager {
      */
     public static AppManager getAppManager(){
         if(instance==null){
-            instance=new AppManager();
+            synchronized (AppManager.class){
+                if(instance == null){
+                    instance = new AppManager();
+                }
+            }
         }
         return instance;
     }

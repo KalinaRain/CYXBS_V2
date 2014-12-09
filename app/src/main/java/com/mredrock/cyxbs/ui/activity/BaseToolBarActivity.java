@@ -26,9 +26,16 @@ public class BaseToolBarActivity extends BaseActivity implements AppBarImpl {
     private LinearLayout baseLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        overridePendingTransition(R.anim.anim_slide_in_from_right,R.anim.anim_slide_out_from_right);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_tool_bar);
         baseLayout = (LinearLayout) findViewById(R.id.view_container);
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.anim_slide_in_from_right,R.anim.anim_slide_out_from_right);
     }
 
     public void setContentLayout(int resId,int title) {
@@ -66,5 +73,10 @@ public class BaseToolBarActivity extends BaseActivity implements AppBarImpl {
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle(title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+    public void setContentLayout(View view) {
+        if (null != baseLayout) {
+            baseLayout.addView(view);
+        }
     }
 }

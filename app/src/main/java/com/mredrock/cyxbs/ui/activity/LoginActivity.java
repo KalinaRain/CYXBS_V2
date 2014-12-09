@@ -46,7 +46,7 @@ import static com.mredrock.cyxbs.util.LogUtils.LOGI;
 /**
  * A login screen that offers login via stu_num/password.
  */
-public class LoginActivity extends SwipeBackActivity implements OnClickListener,AdapterView.OnItemClickListener,TextView.OnEditorActionListener {
+public class LoginActivity extends BaseActivity implements OnClickListener,AdapterView.OnItemClickListener,TextView.OnEditorActionListener {
 
     private final static String TAG = LogUtils.makeLogTag(LoginActivity.class);
 
@@ -131,9 +131,7 @@ public class LoginActivity extends SwipeBackActivity implements OnClickListener,
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.sign_in_button:
-                mEditStuNum.setEnabled(false);
-                mEditPassword.setEnabled(false);
-                mBtnLogin.setEnabled(false);
+                setButtonStatus(false);
                 attemptLogin();
                 break;
             case R.id.iv_login_dropdown:
@@ -173,7 +171,7 @@ public class LoginActivity extends SwipeBackActivity implements OnClickListener,
             // There was an error; don't attempt login and focus the first
             // form field with an error.
             focusView.requestFocus();
-
+            setButtonStatus(true);
         } else {
 
             //network request
@@ -186,6 +184,9 @@ public class LoginActivity extends SwipeBackActivity implements OnClickListener,
                 @Override
                 public void callBack(Object responseData) {
                     login(responseData.toString());
+                    mEditStuNum.setEnabled(true);
+                    mEditPassword.setEnabled(true);
+                    mBtnLogin.setEnabled(true);
                 }
 
                 @Override
@@ -195,12 +196,17 @@ public class LoginActivity extends SwipeBackActivity implements OnClickListener,
                         login(callBackdata);
                     }
                     UIUtils.Toast(LoginActivity.this, getString(R.string.net_error));
+                    setButtonStatus(true);
                 }
             }, params));
         }
-        mEditStuNum.setEnabled(true);
-        mEditPassword.setEnabled(true);
-        mBtnLogin.setEnabled(true);
+
+    }
+
+    private void setButtonStatus(Boolean status){
+        mEditStuNum.setEnabled(status);
+        mEditPassword.setEnabled(status);
+        mBtnLogin.setEnabled(status);
     }
 
     private void login(String responseData){
@@ -215,6 +221,7 @@ public class LoginActivity extends SwipeBackActivity implements OnClickListener,
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));//go to mainActivity firstly,and handle data in background.
                 saveData(account);
                 LoginActivity.this.finish();
+//                LoginActivity.this.overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 break;
             case Config.STATUS_AUTHENTICATION_ERROR:
                 UIUtils.Toast(LoginActivity.this, getString(R.string.authentication_error));
@@ -320,6 +327,8 @@ public class LoginActivity extends SwipeBackActivity implements OnClickListener,
             return view;
         }
     }
+
+
 }
 
 
